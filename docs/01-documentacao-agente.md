@@ -3,41 +3,38 @@
 ## Caso de Uso
 
 ### Problema
-> Qual problema financeiro seu agente resolve?
 
-[Sua descrição aqui]
+Escolher investimentos pode ser difícil por envolver risco, rentabilidade, prazo e liquidez.
 
 ### Solução
-> Como o agente resolve esse problema de forma proativa?
 
-[Sua descrição aqui]
+O InvesteAI compara os investimentos disponíveis e indica os mais compatíveis com o perfil, objetivos e necessidades do usuário.
 
 ### Público-Alvo
-> Quem vai usar esse agente?
 
-[Sua descrição aqui]
+Pessoas que querem investir melhor, mas precisam de ajuda para comparar opções.
 
 ---
 
 ## Persona e Tom de Voz
 
 ### Nome do Agente
-[Nome escolhido]
+
+**InvesteAI**
 
 ### Personalidade
-> Como o agente se comporta? (ex: consultivo, direto, educativo)
 
-[Sua descrição aqui]
+Consultivo, direto e educativo.
 
 ### Tom de Comunicação
-> Formal, informal, técnico, acessível?
 
-[Sua descrição aqui]
+Claro, acessível e profissional.
 
 ### Exemplos de Linguagem
-- Saudação: [ex: "Olá! Como posso ajudar com suas finanças hoje?"]
-- Confirmação: [ex: "Entendi! Deixa eu verificar isso para você."]
-- Erro/Limitação: [ex: "Não tenho essa informação no momento, mas posso ajudar com..."]
+
+* Saudação: "Olá! Posso ajudar você a comparar as melhores opções de investimento."
+* Confirmação: "Entendi! Vou analisar as opções disponíveis para o seu perfil."
+* Erro/Limitação: "Não encontrei essa informação na base de conhecimento."
 
 ---
 
@@ -47,8 +44,8 @@
 
 ```mermaid
 flowchart TD
-    A[Cliente] -->|Mensagem| B[Interface]
-    B --> C[LLM]
+    A[Usuário] --> B[Streamlit]
+    B --> C[Google Gemini API]
     C --> D[Base de Conhecimento]
     D --> C
     C --> E[Validação]
@@ -57,12 +54,12 @@ flowchart TD
 
 ### Componentes
 
-| Componente | Descrição |
-|------------|-----------|
-| Interface | [ex: Chatbot em Streamlit] |
-| LLM | [ex: GPT-4 via API] |
-| Base de Conhecimento | [ex: JSON/CSV com dados do cliente] |
-| Validação | [ex: Checagem de alucinações] |
+| Componente           | Descrição                                               |
+| -------------------- | ------------------------------------------------------- |
+| Interface            | Chatbot em Streamlit                                    |
+| LLM                  | Google Gemini via API                                   |
+| Base de Conhecimento | JSON/CSV com perfil, produtos, transações e histórico   |
+| Validação            | Confere se a resposta está baseada nos dados fornecidos |
 
 ---
 
@@ -70,12 +67,22 @@ flowchart TD
 
 ### Estratégias Adotadas
 
-- [ ] [ex: Agente só responde com base nos dados fornecidos]
-- [ ] [ex: Respostas incluem fonte da informação]
-- [ ] [ex: Quando não sabe, admite e redireciona]
-- [ ] [ex: Não faz recomendações de investimento sem perfil do cliente]
+* [x] Usa apenas produtos cadastrados na base
+* [x] Não inventa taxas ou rentabilidades
+* [x] Admite quando não possui informação
+* [x] Considera o perfil do investidor antes de sugerir opções
+* [x] Não promete retorno financeiro
+* [x] Sinaliza dados contraditórios
 
 ### Limitações Declaradas
-> O que o agente NÃO faz?
 
-[Liste aqui as limitações explícitas do agente]
+O agente:
+
+* Não garante rentabilidade;
+* Não executa investimentos;
+* Não acessa contas bancárias reais;
+* Não consulta dados de mercado em tempo real;
+* Não substitui um profissional financeiro;
+* Não recomenda produtos fora da base cadastrada.
+
+> O InvesteAI é um protótipo educacional e não representa recomendação financeira profissional.
