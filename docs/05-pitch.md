@@ -58,12 +58,8 @@ O projeto também demonstra como a IA Generativa pode ser utilizada de forma res
 * [X] Problema claramente definido
 * [X] Solução demonstrada na prática
 * [X] Diferencial explicado
-* [X] Áudio e vídeo com boa qualidade
-
 ---
 
 ## Link do Vídeo
 
-> Cole aqui o link do seu pitch (YouTube, Loom, Google Drive, etc.)
-
-[Link do vídeo]
+[https://drive.google.com/file/d/1Nn9l7caclCDNeguCq2oXswBHMcDda3k1/view?usp=sharing)]
